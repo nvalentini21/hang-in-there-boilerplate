@@ -184,9 +184,17 @@ function returnToMain(currentPage) {
 function generatePosterFromInput() {
     event.preventDefault();
     generatePoster();
-    image.src = posterImageURL.value;
-    title.innerText = posterTitle.value;
-    quote.innerText = posterQuote.value;
+
+    // var generateInputPoster = {
+    //   inputImage:
+    //   inputTitle:
+    //   inputQuote:
+    // }
+    // image.src = posterImageURL.value;
+    // title.innerText = posterTitle.value;
+    // quote.innerText = posterQuote.value;
+
+//We do not need lines 188-195, as that is handled by our generatePoster function.
 
     images.push(posterImageURL.value);
     titles.push(posterTitle.value);
@@ -200,3 +208,9 @@ function addToSavedImageArray() {
         savedPosters.push(currentPoster)
     }
 };
+
+//Grid View Pseudocode:
+//Use .innerHTML to add the mini poster class to the html in the Saved posters
+//section. Then access the elements in the savedPosters array and assign them
+//the the corresponding <img, <h2, <h4.
+//add this new grid function to the savePosterButton event listener.
