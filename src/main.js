@@ -146,7 +146,10 @@ backToMainButton.addEventListener('click', function() {
 
 showPosterButton.addEventListener('click', generatePosterFromInput);
 
-savePosterButton.addEventListener('click', addToSavedImageArray);
+savePosterButton.addEventListener('click', function() {
+    addToSavedImageArray();
+    displayGrid();
+});
 
 // functions and event handlers go here 👇
 // (we've provided one for you to get you started)!
@@ -209,6 +212,16 @@ function addToSavedImageArray() {
     }
 };
 
+// able to see the poster on the display page, though still not in a grid form.
+//posters are stacked. Still need to pass in info from the arrays ...
+function displayGrid() {
+  savedPosterPage.classList.add('mini-poster')
+  savedPosterPage.innerHTML = ` <article class="saved-poster-grid mini-poster">
+      <img class="poster-img-saved" src="" alt="nothin' to see here">
+      <h2 class="poster-title-saved">Title</h2>
+      <h4 class="poster-quote-saved">Quote</h4>
+    </article>`
+}
 //Grid View Pseudocode:
 //Use .innerHTML to add the mini poster class to the html in the Saved posters
 //section. Then access the elements in the savedPosters array and assign them
