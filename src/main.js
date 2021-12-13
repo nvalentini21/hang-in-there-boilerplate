@@ -186,19 +186,11 @@ function returnToMain(currentPage) {
 
 function generatePosterFromInput() {
     event.preventDefault();
-    generatePoster();
+    // generatePoster();
 
-    // var generateInputPoster = {
-    //   inputImage:
-    //   inputTitle:
-    //   inputQuote:
-    // }
-    // image.src = posterImageURL.value;
-    // title.innerText = posterTitle.value;
-    // quote.innerText = posterQuote.value;
-
-//We do not need lines 188-195, as that is handled by our generatePoster function.
-
+    image.src = posterImageURL.value;
+    title.innerText = posterTitle.value;
+    quote.innerText = posterQuote.value;
     images.push(posterImageURL.value);
     titles.push(posterTitle.value);
     quotes.push(posterQuote.value);
@@ -215,13 +207,14 @@ function addToSavedImageArray() {
 // able to see the poster on the display page, though still not in a grid form.
 //posters are stacked. Still need to pass in info from the arrays ...
 function displayGrid() {
-  savedPosterPage.classList.add('mini-poster')
-  savedPosterPage.innerHTML = ` <article class="saved-poster-grid mini-poster">
+  savedPosterPage.innerHTML = `
+  <article class="saved-posters-grid"></article>
+  <article class="mini-poster">
       <img class="poster-img-saved" src="" alt="nothin' to see here">
       <h2 class="poster-title-saved">Title</h2>
       <h4 class="poster-quote-saved">Quote</h4>
     </article>`
-}
+};
 //Grid View Pseudocode:
 //Use .innerHTML to add the mini poster class to the html in the Saved posters
 //section. Then access the elements in the savedPosters array and assign them
